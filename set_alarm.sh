@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This is how many minutes a snooze is
-SNOOZE=1
+SNOOZE=10
 
 if [ "$#" = 0 ]; then
 	# Turn screen on
@@ -17,5 +17,7 @@ fi
 # This is the length of a snooze
 echo "DISPLAY=$DISPLAY xterm -e $0" | at $amount
 
-# Turn off screen
-xset s activate
+if [ "$#" = 0 ]; then
+	# Turn off screen
+	xset s activate
+fi
