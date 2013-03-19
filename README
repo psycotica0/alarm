@@ -1,0 +1,9 @@
+Quick alarm thing I wrote one night because I had to get up at a particular time the next morning.
+
+Essentially, I have one script that saves the state of mpd, then loads a playlist called "alarm".
+It plays that until you hit enter, then it restores the state of mpd.
+
+That's the alarm.
+
+The other part is a script that uses at to handle having the alarm go off at the right time, along with snooze.
+The script will snooze indefinitely, but you can use atq and atrm to remove the next iteration, which will stop it.
