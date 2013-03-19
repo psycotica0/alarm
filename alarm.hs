@@ -39,5 +39,6 @@ return_to_status state = do
 main = do
 	nonce <- fmap ((MPD.PlaylistName).(BS.pack).(take 6).randomRs ('a', 'z')) getStdGen
 	(Right st) <- MPD.withMPD $ interrupt nonce
+	putStrLn "Press Enter to Snooze"
 	getLine
 	MPD.withMPD $ reset nonce st
